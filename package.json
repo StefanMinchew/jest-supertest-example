@@ -1,0 +1,26 @@
+{
+  "name": "betestsjestsupertest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "jest": "^29.7.0",
+    "pg": "^8.14.1",
+    "supertest": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.17",
+    "@types/pg": "^8.11.11",
+    "@types/supertest": "^6.0.3",
+    "ts-jest": "^29.3.1",
+    "ts-node": "^10.9.2"
+  }
+}
