@@ -18,6 +18,10 @@ This project contains API integration tests using **Jest**, **Supertest**, and *
 
 ### 1️⃣ Clone the Repository
 
+```sh
+git clone https://github.com/StefanMinchew/jest-supertest-example.git
+```
+
 ### 2️⃣ Install Dependencies
 
 ```sh
@@ -50,12 +54,18 @@ TEST_ADMIN_PASSWORD=adminpassword
 
 ```
 ├── src/
+│   ├── db/
+│   │   ├── userDb.ts       # User database queries
+│   ├── services/
+│   │   ├── UserService.ts  # User service
 │   ├── tests/
 │   │   ├── user.test.ts    # API integration tests
+│   ├── types/
+│   │   ├── roles.ts        # Roles types
 │   ├── utils/
+│   │   ├── apiClient.ts    # Setup API roles
 │   │   ├── authHelper.ts   # Authentication helper
-│   │   ├── apiClient.ts    # Setup API roles authentications
-│   ├── config.ts           # API configuration
+│   ├── config.ts           # Configuration
 │   ├── db.ts               # Database connection
 │   ├── setupTests.ts       # Setup Authentication tokens
 │── .env.example            # Example environment variables
