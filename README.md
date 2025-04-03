@@ -10,6 +10,7 @@ This project contains API integration tests using **Jest**, **Supertest**, and *
 - ✅ Database integration testing with **PostgreSQL**
 - ✅ Uses **ts-jest** for TypeScript support
 - ✅ Automatic test data cleanup after tests
+- ✅ Reuses authentication tokens for faster test runs
 - ✅ Configurable via `.env` file
 
 ---
@@ -35,11 +36,6 @@ Create a `.env` file in the root folder with the following content:
 ```ini
 API_URL=http://localhost:3000
 DATABASE_URL=postgres://<USER>:<PASSWORD>@<HOST>:<PORT>/<DB_NAME>
-DB_USER=<DB_USER>
-DB_PASS=<DB_PASSWORD>
-DB_HOST=<DB_HOST>
-DB_PORT=<DB_PORT>
-DB_NAME=<DB_NAME>
 
 TEST_USER_EMAIL=user@example.com
 TEST_USER_PASSWORD=userpassword
@@ -66,7 +62,6 @@ TEST_ADMIN_PASSWORD=adminpassword
 │   │   ├── apiClient.ts    # Setup API roles
 │   │   ├── authHelper.ts   # Authentication helper
 │   ├── config.ts           # Configuration
-│   ├── db.ts               # Database connection
 │   ├── setupTests.ts       # Setup Authentication tokens
 │── .env.example            # Example environment variables
 │── jest.config.ts          # Jest configuration
