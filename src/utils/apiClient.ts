@@ -1,14 +1,11 @@
-import request from "supertest";
+import request, { Test } from "supertest";
 import { apiUrl } from "../config";
-import { userToken, adminToken } from "../setupTests";
+import { roles, UserRole } from "../types/roles";
+import TestAgent from "supertest/lib/agent";
 
-const roles = {
-  user: userToken,
-  admin: adminToken,
-};
+export function api(role?: UserRole): TestAgent<Test> {
+  const req = request.agent(apiUrl);
 
-export function api(role?: keyof typeof roles) {
-  const req = request(apiUrl);
   return role && roles[role]
     ? req.set("Authorization", `Bearer ${roles[role]}`)
     : req;
